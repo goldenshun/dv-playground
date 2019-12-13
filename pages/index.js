@@ -1,5 +1,9 @@
+import Link from 'next/link';
+
 const Index = () => (
-  <div>Welcome to dv-playground</div>
+  <div>
+    <Link href="/percent-circle"><a>Percent Circle</a></Link>
+  </div>
 );
 
 export default Index;
