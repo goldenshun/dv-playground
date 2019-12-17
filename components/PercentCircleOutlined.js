@@ -1,12 +1,24 @@
+/* eslint-disable no-return-assign */
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+
 const RADIUS = 40;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 
 const PercentCircle = (props) => {
   const { percentage, ...rest } = props;
+  let root = useRef(null);
+  let pathCircle = useRef(null);
+
+  useEffect(() => {
+    const tl = gsap.timeline({ defaults: { duration: 1, ease: 'power3.out ' } });
+    tl.from(root, { y: 40 }); // Animate from bottom
+    tl.from(pathCircle, { strokeDashoffset: CIRCUMFERENCE }, '-=1');
+  }, []);
 
   const text = percentage ? new Intl.NumberFormat('en-US', { style: 'percent' }).format(percentage) : null;
   return (
-    <svg viewBox="0 0 100 100" width="120" height="120" {...rest}>
+    <svg ref={el => root = el} viewBox="0 0 100 100" width="120" height="120" {...rest}>
       <circle
         cx="50%"
         cy="50%"
@@ -16,6 +28,7 @@ const PercentCircle = (props) => {
         fill="none"
       />
       <circle
+        ref={el => pathCircle = el}
         cx="50%"
         cy="50%"
         r={RADIUS}
