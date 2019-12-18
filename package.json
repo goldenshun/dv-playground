@@ -9,7 +9,7 @@
     "dev": "next",
     "export": "next export",
     "lint": "eslint --ext .js .",
-    "start": "next start"
+    "start": "next start -p ${PORT:-3000}"
   },
   "repository": {
     "type": "git",
