@@ -1,7 +1,12 @@
 FROM node:10.15.1-alpine
 
-# Create nectar directory
+# Create directory
 WORKDIR /usr/src/dev-playground
+
+# Initialize env variables
+ARG CONTENTFUL_SPACE_ID
+ARG CONTENTFUL_ACCESS_TOKEN
+ARG CONTENTFUL_PREVIEW_ACCESS_TOKEN
 
 # Install root dependencies
 COPY package*.json ./
