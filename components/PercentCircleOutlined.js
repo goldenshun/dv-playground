@@ -12,8 +12,8 @@ const PercentCircle = (props) => {
 
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { duration: 1, ease: 'power3.out ' } });
-    tl.from(root, { y: 40 }); // Animate from bottom
-    tl.from(pathCircle, { strokeDashoffset: CIRCUMFERENCE }, '-=1');
+    // tl.from(root, { y: 40 }); // Animate from bottom
+    tl.from(pathCircle, { strokeDashoffset: CIRCUMFERENCE });
   }, []);
 
   const text = percentage ? new Intl.NumberFormat('en-US', { style: 'percent' }).format(percentage) : null;

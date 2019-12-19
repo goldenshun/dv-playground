@@ -6,7 +6,7 @@ const RADIUS = 50;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 
 const PercentCircleFilled = (props) => {
-  const { percentage, ...rest } = props;
+  const { percentage } = props;
   let pathCircle = useRef(null);
 
   useEffect(() => {
