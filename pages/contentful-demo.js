@@ -1,12 +1,13 @@
 /* eslint-disable react/no-array-index-key */
 import { useEffect, useState } from 'react';
 import { createClient } from 'contentful';
+import getConfig from 'next/config';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import PercentCircleOutlined from '../components/PercentCircleOutlined';
 
 const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  space: getConfig().publicRuntimeConfig.CONTENTFUL_SPACE_ID,
+  accessToken: getConfig().publicRuntimeConfig.CONTENTFUL_ACCESS_TOKEN,
 });
 
 const ContentfulDemo = () => {
