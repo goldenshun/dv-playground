@@ -9,7 +9,8 @@
     "dev": "dotenv next",
     "export": "next export",
     "lint": "eslint --ext .js .",
-    "start": "next start -p ${PORT:-3000}"
+    "start": "next start -p ${PORT:-3000}",
+    "start:dev": "dotenv next start -- -p ${PORT:-3000}"
   },
   "repository": {
     "type": "git",
