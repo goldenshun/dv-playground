@@ -1,3 +1,5 @@
+console.log('CONTENTFUL_SPACE_ID', process.env.CONTENTFUL_SPACE_ID);
+
 module.exports = {
   env: {
     CONTENTFUL_SPACE_ID: process.env.CONTENTFUL_SPACE_ID,
