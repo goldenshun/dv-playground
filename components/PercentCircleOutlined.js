@@ -36,7 +36,6 @@ const PercentCircle = (props) => {
         strokeWidth="10px"
         strokeDasharray={CIRCUMFERENCE}
         strokeDashoffset={CIRCUMFERENCE * (1 - percentage)}
-        strokeLinecap="round"
         fill="none"
       />
       <text

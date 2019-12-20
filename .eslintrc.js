@@ -12,6 +12,7 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react/no-danger': 'off', // The term dangerouslySetInnerHTML should be enough warning
     'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
     'jsx-a11y/anchor-is-valid': ['error', {
       components: ['Link'],
       specialLink: ['hrefLeft', 'hrefRight'],
