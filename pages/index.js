@@ -1,9 +1,10 @@
-import Link from 'next/link';
-
 const Index = () => (
   <div>
-    <div><Link href="/percent-circle"><a>Percent Circle</a></Link></div>
-    <div><Link href="/percent-circle-outlined"><a>Percent Circle Outlined</a></Link></div>
+    <div><a href="/contentful-demo">Contentful Demo</a></div>
+    <div><a href="/sanity-demo">Sanity Demo</a></div>
+    <div><a href="/percent-circle">Percent Circle</a></div>
+    <div><a href="/percent-circle-outlined">Percent Circle Outlined</a></div>
+    <div><a href="/radial">Radial</a></div>
   </div>
 );
 
