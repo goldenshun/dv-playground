@@ -1,27 +1,14 @@
 /* eslint-disable react/no-array-index-key */
 const RADIUS = 50;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
-const strokeWidth = 5;
-
-const items = [{
-  percentage: 0.16,
-  stroke: '#4A707D',
-}, {
-  percentage: 0.23,
-  stroke: '#95A393',
-}, {
-  percentage: 0.28,
-  stroke: '#A6A06D',
-}, {
-  percentage: 0.36,
-  stroke: '#DCC06B',
-}];
 
 const Radial = (props) => {
-  const { text, ...rest } = props;
+  const { items, ...rest } = props;
+
+  const strokeWidth = RADIUS / 2 / items.length;
 
   return (
-    <svg viewBox="0 0 100 100" width="100" height="100" {...rest}>
+    <svg viewBox="0 0 100 100" width="300" height="300" {...rest}>
       <circle
         cx="50%"
         cy="50%"
@@ -38,7 +25,7 @@ const Radial = (props) => {
           key={index}
           cx="50%"
           cy="50%"
-          r={RADIUS - ((index + 1) * 2.5)}
+          r={(RADIUS + (strokeWidth / 2)) - ((index + 1) * strokeWidth)}
           stroke={item.stroke}
           strokeWidth={strokeWidth}
           strokeDasharray={CIRCUMFERENCE}
