@@ -7,7 +7,6 @@ const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 
 const PercentCircle = (props) => {
   const { percentage, ...rest } = props;
-  let root = useRef(null);
   let pathCircle = useRef(null);
 
   useEffect(() => {
@@ -18,7 +17,7 @@ const PercentCircle = (props) => {
 
   const text = percentage ? new Intl.NumberFormat('en-US', { style: 'percent' }).format(percentage) : null;
   return (
-    <svg ref={el => root = el} viewBox="0 0 100 100" width="120" height="120" {...rest}>
+    <svg viewBox="0 0 100 100" width="120" height="120" {...rest}>
       <circle
         cx="50%"
         cy="50%"
