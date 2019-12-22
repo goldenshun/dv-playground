@@ -1,5 +1,6 @@
 import React from 'react';
 import App from 'next/app';
+import PrismicPreviewScript from '../components/PrismicPreviewScript';
 
 class MyApp extends App {
   static async getInitialProps(appContext) {
@@ -11,7 +12,12 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps } = this.props;
-    return <Component {...pageProps} />;
+    return (
+      <>
+        <Component {...pageProps} />
+        <PrismicPreviewScript />
+      </>
+    );
   }
 }
 
